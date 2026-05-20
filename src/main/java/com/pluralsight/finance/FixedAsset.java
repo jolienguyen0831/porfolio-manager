@@ -17,6 +17,5 @@ public abstract class FixedAsset implements Valuable {
         return marketValue;
     }
 
-    @Override
     public abstract double getValue();
 }
