@@ -1,9 +1,9 @@
 package com.pluralsight.finance;
 
 public abstract class Account implements Valuable {
-    private String name;
-    private String accountNumber;
-    private double balance;
+    protected String name;
+    protected String accountNumber;
+    protected double balance;
 
     public Account(String name, String accountNumber, double balance) {
         this.name = name;
