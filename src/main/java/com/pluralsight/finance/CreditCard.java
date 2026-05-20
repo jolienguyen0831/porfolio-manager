@@ -13,6 +13,6 @@ public class CreditCard extends Account{
 
     @Override
     public double getValue() {
-        return 0;
+        return balance;
     }
 }
