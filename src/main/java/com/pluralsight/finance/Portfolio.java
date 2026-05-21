@@ -1,16 +1,18 @@
 package com.pluralsight.finance;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class Porfolio implements Valuable {
+public class Portfolio implements Valuable {
     private String name;
     private String owner;
-    private ArrayList<Valuable> valuables;
+    private List<Valuable> valuables;
 
-    public Porfolio(String name, String owner, ArrayList<Valuable> valuables) {
+    public Portfolio(String name, String owner) {
         this.name = name;
         this.owner = owner;
-        this.valuables = valuables;
+        this.valuables = new ArrayList<>();
+
     }
     public void add(Valuable valuable){
         valuables.add(valuable);
@@ -22,7 +24,7 @@ public class Porfolio implements Valuable {
     public double getMostValueable(){
         return valuables.stream().mapToDouble(Valuable::getValue).reduce(Double::max).orElse(0.0);
     }
-    public double getLeaseValuable(){
+    public double getLeastValuable(){
         return valuables.stream().mapToDouble(Valuable::getValue).reduce(Double::min).orElse(0.0);
     }
 
